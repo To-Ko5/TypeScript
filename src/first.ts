@@ -25,4 +25,8 @@ const drink = {
 }
 
 // any
-let demo: any = 'ddd'
+let anyDemo: any = 'ddd'
+
+// union
+const unionDemo: number | string = 30
+const unionDemo2: (number | string)[] = ['demo', 2]
