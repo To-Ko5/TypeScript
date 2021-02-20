@@ -48,3 +48,9 @@ function add(num1: number, num2: number): number {
 function add2(num1: number, num2: number): void {
   console.log(num1 + num2)
 }
+
+const add3: (num1: number, num2: number) => number = add
+
+// arrow
+const add4 = (number: number): number => number * 10
+const add5: (number: number) => number = (number) => number * 10
