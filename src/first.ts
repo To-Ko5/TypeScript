@@ -30,3 +30,8 @@ let anyDemo: any = 'ddd'
 // union
 const unionDemo: number | string = 30
 const unionDemo2: (number | string)[] = ['demo', 2]
+
+// literal
+const literalDemo: 'demo' = 'demo'
+const literalDemo2: true = true
+let literalDemo3: "small" | "medium" | "big" = "big"
