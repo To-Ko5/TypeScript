@@ -35,3 +35,7 @@ const unionDemo2: (number | string)[] = ['demo', 2]
 const literalDemo: 'demo' = 'demo'
 const literalDemo2: true = true
 let literalDemo3: "small" | "medium" | "big" = "big"
+
+// type
+type typeSize = "small" | "medium" | "big"
+const typeDemo: typeSize = "small"
