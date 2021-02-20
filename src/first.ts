@@ -23,3 +23,6 @@ const drink = {
   hot: true,
   size: Size.big
 }
+
+// any
+let demo: any = 'ddd'
