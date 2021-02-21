@@ -70,3 +70,9 @@ let text: string
 if (typeof unknownDemo === 'string') {
   text = unknownDemo
 }
+
+// never
+// 何も返さない
+function error(message: string): never {
+  throw new Error(message)
+}
