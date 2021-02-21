@@ -1,2 +1,6 @@
-yarn tsc
+yarn tsc #コンパイル
+yarn tsc --watch #リアルタイム
+
 node dist/first.js
+
+yarn tsc --init #tsconfig.jsonを作成
