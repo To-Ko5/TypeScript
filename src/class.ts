@@ -21,11 +21,20 @@ class Person {
 
 class Person2 extends Person {
   private type: string
-  get getType() {
+  
+  get isType() {
     if (!this.type) {
       throw new Error('Error no type')
     }
     return this.type
+  }
+
+  set isType(value) {
+    // getとsetは同名にする
+    if (!value) {
+      throw new Error('Error no type')
+    }
+    this.type = value
   }
   constructor(name: string, age: number, comment: string, type: string) {
     super(name, age, comment) // 継承先で初期化する場合は、superは必須
@@ -38,4 +47,5 @@ class Person2 extends Person {
 }
 
 const demo = new Person2('tom', 30, 'hello', 'A')
-console.log(demo.getType)
+demo.isType = 'AB'
+console.log(demo.isType)
