@@ -18,6 +18,17 @@ class Person {
   }
 }
 
-const demo: Person = new Person('tom', 50, 'hello')
+class Person2 extends Person {
+  type: string
+  constructor(name: string, age: number, comment: string, type: string) {
+    super(name, age, comment) // 継承先で初期化する場合は、superは必須
+    this.type = type
+  }
+
+  greeting() {
+    console.log(` ${this.name} ${this.age} ${this.comment} ${this.type} `)
+  }
+}
+
+const demo = new Person2('tom', 30, 'hello', 'A')
 console.log(demo.greeting())
-console.log(demo.comment)
