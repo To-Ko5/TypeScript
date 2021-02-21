@@ -3,6 +3,7 @@ class Person {
   // private age: number private class内のみで参照
   protected age: number // protected 継承先でも使用できる
   public readonly comment: string // readonly 書き換えせず、参照のみ
+  static address = 'japan' // static インスタンを作成せず、classを使う
 
   constructor(name: string, age: number, comment: string) {
     this.name = name
@@ -21,7 +22,7 @@ class Person {
 
 class Person2 extends Person {
   private type: string
-  
+
   get isType() {
     if (!this.type) {
       throw new Error('Error no type')
@@ -49,3 +50,4 @@ class Person2 extends Person {
 const demo = new Person2('tom', 30, 'hello', 'A')
 demo.isType = 'AB'
 console.log(demo.isType)
+console.log(Person.address)
