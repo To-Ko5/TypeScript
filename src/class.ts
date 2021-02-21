@@ -20,7 +20,13 @@ class Person {
 }
 
 class Person2 extends Person {
-  type: string
+  private type: string
+  get getType() {
+    if (!this.type) {
+      throw new Error('Error no type')
+    }
+    return this.type
+  }
   constructor(name: string, age: number, comment: string, type: string) {
     super(name, age, comment) // 継承先で初期化する場合は、superは必須
     this.type = type
@@ -32,4 +38,4 @@ class Person2 extends Person {
 }
 
 const demo = new Person2('tom', 30, 'hello', 'A')
-console.log(demo.greeting())
+console.log(demo.getType)
