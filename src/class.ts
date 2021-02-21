@@ -1,6 +1,7 @@
 class Person {
   public name: string // 初期値はpublic
-  private age: number // private class内のみで参照
+  // private age: number private class内のみで参照
+  protected age: number // protected 継承先でも使用できる
   public readonly comment: string // readonly 書き換えせず、参照のみ
 
   constructor(name: string, age: number, comment: string) {
