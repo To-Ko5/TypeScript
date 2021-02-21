@@ -56,10 +56,17 @@ const add4 = (number: number): number => number * 10
 const add5: (number: number) => number = (number) => number * 10
 
 // callback
-function callback1(num1: number, cb: (num: number) => number):void {
+function callback1(num1: number, cb: (num: number) => number): void {
   const numberAdd = cb(num1 * 2)
   console.log(numberAdd)
 }
 callback1(21, (cbNum) => {
   return cbNum
 })
+
+// unknown
+let unknownDemo: unknown = 'demo'
+let text: string
+if (typeof unknownDemo === 'string') {
+  text = unknownDemo
+}
