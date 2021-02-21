@@ -8,5 +8,6 @@ class Person {
     console.log(`Hello ${this.name}`)
   }
 }
-const demo = new Person('tom')
+
+const demo: Person = new Person('tom')
 console.log(demo.greeting())
