@@ -3,6 +3,10 @@ class Person {
   constructor(name: string) {
     this.name = name
   }
+
+  greeting() {
+    console.log(`Hello ${this.name}`)
+  }
 }
 const demo = new Person('tom')
-console.log(demo.name)
+console.log(demo.greeting())
