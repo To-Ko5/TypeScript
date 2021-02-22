@@ -6,6 +6,11 @@ interface person {
   callMessage(message: string): void
 }
 
+interface person2 extends person {
+  // interfaceも継承可能
+  type: string
+}
+
 const demo1: person = {
   name: 'tom',
   age: 23,
