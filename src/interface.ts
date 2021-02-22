@@ -31,3 +31,12 @@ class Demo2 implements person {
     console.log(this.name)
   }
 }
+
+// 関数にinterface
+interface add {
+  (num1: number, num2: number): number
+}
+
+const addFunc: add = (num1, num2) => {
+  return num1 + num2
+}
