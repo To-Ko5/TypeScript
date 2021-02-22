@@ -1,4 +1,4 @@
-class Person {
+abstract class Person {
   public name: string // 初期値はpublic
   // private age: number private class内のみで参照
   protected age: number // protected 継承先でも使用できる
@@ -17,7 +17,10 @@ class Person {
 
   greeting() {
     console.log(` ${this.name} ${this.age} ${this.comment} `)
+    this.callType()
   }
+
+  abstract callType(): void // Abstract 継承先でのみ使う場合
 }
 
 class Person2 extends Person {
@@ -37,6 +40,7 @@ class Person2 extends Person {
     }
     this.type = value
   }
+
   constructor(name: string, age: number, comment: string, type: string) {
     super(name, age, comment) // 継承先で初期化する場合は、superは必須
     this.type = type
@@ -45,9 +49,14 @@ class Person2 extends Person {
   greeting() {
     console.log(` ${this.name} ${this.age} ${this.comment} ${this.type} `)
   }
+
+  callType() {
+    console.log(this.type)
+  }
 }
 
 const demo = new Person2('tom', 30, 'hello', 'A')
 demo.isType = 'AB'
 console.log(demo.isType)
 console.log(Person.address)
+console.log(demo.greeting())
