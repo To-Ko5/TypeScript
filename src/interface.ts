@@ -1,6 +1,7 @@
 interface person {
   name: string
   age: number
+  readonly comments: string
   // callMessage: (message: string) => void
   callMessage(message: string): void
 }
@@ -8,6 +9,7 @@ interface person {
 const demo1: person = {
   name: 'tom',
   age: 23,
+  comments: 'hello',
   callMessage(message: string) {
     console.log(message)
   }
@@ -15,7 +17,11 @@ const demo1: person = {
 
 class Demo2 implements person {
   // implements classにinterfaceを適用
-  constructor(public name: string, public age: number) {}
+  constructor(
+    public name: string,
+    public age: number,
+    readonly comments: string
+  ) {}
   callMessage() {
     console.log(this.name)
   }
