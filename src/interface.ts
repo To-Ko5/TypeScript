@@ -2,6 +2,7 @@ interface person {
   name: string
   age: number
   readonly comments: string
+  date?: string
   // callMessage: (message: string) => void
   callMessage(message: string): void
 }
@@ -27,7 +28,10 @@ class Demo2 implements person {
     public age: number,
     readonly comments: string
   ) {}
-  callMessage() {
+  callMessage(message?: string) {
+    if (message) {
+      message.toLocaleLowerCase()
+    }
     console.log(this.name)
   }
 }
