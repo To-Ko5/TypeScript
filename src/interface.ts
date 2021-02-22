@@ -12,3 +12,11 @@ const demo1: person = {
     console.log(message)
   }
 }
+
+class Demo2 implements person {
+  // implements classにinterfaceを適用
+  constructor(public name: string, public age: number) {}
+  callMessage() {
+    console.log(this.name)
+  }
+}
