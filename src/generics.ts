@@ -27,3 +27,26 @@ useDemoClass.add('ken')
 useDemoClass.add('mike')
 useDemoClass.remove('ken')
 console.log(useDemoClass.get())
+
+// Utility
+interface TextType {
+  title: string
+  text: string
+}
+
+type Text = Partial<TextType>
+type Tex2 = Readonly<TextType>
+
+
+
+const fetchData: Promise<string> = new Promise((resolve) => {
+  setTimeout(() => {
+    resolve('hello')
+  }, 2000)
+})
+
+fetchData.then((data) => {
+  data.toLowerCase()
+})
+
+const name: Array<string> = ['tom', 'ken', 'mike']
