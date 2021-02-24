@@ -1,7 +1,7 @@
 class Score {}
 
 class Count {
-  constructor() {
+  constructor(public element: HTMLDivElement) {
     
   }
 }
@@ -9,9 +9,10 @@ class Count {
 class Counts {
   elements = document.querySelectorAll<HTMLDivElement>('.count')
   constructor() {
-    
+    this.elements.forEach((e) => {
+      new Count(e)
+    })
   }
 }
-
 
 const counts = new Counts()
