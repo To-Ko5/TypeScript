@@ -1,4 +1,20 @@
-class Score {
+interface Scoreable {
+  readonly totalScore: number
+  render: () => void
+}
+
+interface Countable {
+  element: HTMLDivElement
+  clickEvent: () => void
+}
+
+interface Countsable {
+  elements: NodeListOf<HTMLDivElement>
+  activeElements: HTMLDivElement[]
+  activeElementsScore: number[]
+}
+
+class Score implements Scoreable {
   private static instance: Score
   get totalScore() {
     const count = Counts.getInstance()
@@ -21,7 +37,7 @@ class Score {
   }
 }
 
-class Count {
+class Count implements Countable {
   constructor(public element: HTMLDivElement) {
     element.addEventListener('click', this.clickEvent.bind(this))
   }
@@ -33,7 +49,7 @@ class Count {
   }
 }
 
-class Counts {
+class Counts implements Countsable {
   private static instance: Counts
   elements = document.querySelectorAll<HTMLDivElement>('.count')
   private _activeElements: HTMLDivElement[] = []
