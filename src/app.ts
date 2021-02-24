@@ -2,7 +2,7 @@ class Score {}
 
 class Count {
   constructor(public element: HTMLDivElement) {
-    element.addEventListener('click', this.clickEvent)
+    element.addEventListener('click', this.clickEvent.bind(this))
   }
   clickEvent() {
     this.element.classList.toggle('count--active')
