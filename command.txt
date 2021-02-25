@@ -1,6 +1,7 @@
+yarn add -D typescript @types/node #TypeScriptインストール
+yarn tsc --init #tsconfig.jsonを作成
 yarn tsc #コンパイル
 yarn tsc --watch #リアルタイム
 
-node dist/first.js
+node dist/first.js #jsを実行
 
-yarn tsc --init #tsconfig.jsonを作成
